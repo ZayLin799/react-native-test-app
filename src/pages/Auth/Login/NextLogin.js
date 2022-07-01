@@ -35,6 +35,7 @@ const NextLogin = ({navigation, route}) => {
     data = JSON.parse(res);
     if (data.userEmail === email && data.userPwd === password) {
       getAuth(true);
+      ToastAndroid.show(`Login Success!`, ToastAndroid.SHORT);
     } else {
       ToastAndroid.show('Email or password wrong!', ToastAndroid.SHORT);
     }

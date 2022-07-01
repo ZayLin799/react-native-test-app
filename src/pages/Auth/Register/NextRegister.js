@@ -38,6 +38,7 @@ const NextLogin = ({navigation, route}) => {
           },
         );
         getAuth(true);
+        ToastAndroid.show(`Register Success!`, ToastAndroid.SHORT);
       } else {
         ToastAndroid.show(`Password didn't match!`, ToastAndroid.SHORT);
       }
