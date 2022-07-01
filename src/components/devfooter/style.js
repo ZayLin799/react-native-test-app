@@ -5,9 +5,18 @@ import {
 } from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
-  maincontainer: {
+  devContainer: {
     flex: 1,
-    backgroundColor: '#D5FAFA',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  devTexta: {
+    color: 'black',
+    fontFamily: 'RobotoMono-Italic',
+  },
+  devTextb: {
+    color: 'red',
+    fontFamily: 'RobotoMono-Italic',
   },
 });
 

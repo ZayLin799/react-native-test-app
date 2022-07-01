@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 const DashboardStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Dashboard" component={DashboardScreen} />
     </Stack.Navigator>
   );

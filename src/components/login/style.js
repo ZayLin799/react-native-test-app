@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
+    fontFamily: 'RobotoMono-Italic',
     color: 'black',
   },
   button: {
@@ -27,12 +28,14 @@ const styles = StyleSheet.create({
     marginTop: hp(5),
   },
   input: {
-    backgroundColor: '#ddd',
+    backgroundColor: 'white',
     width: wp(70),
     paddingHorizontal: hp(2),
     paddingVertical: hp(1),
     borderRadius: hp(1),
     margin: 0,
+    color: '#8A9399',
+    fontFamily: 'RobotoMono-Italic',
   },
   buttonContainer: {
     marginTop: hp(3),
@@ -45,6 +48,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
+    fontFamily: 'RobotoMono-Italic',
   },
   accContainer: {
     flexDirection: 'row',
@@ -52,9 +56,11 @@ const styles = StyleSheet.create({
   },
   accText: {
     color: 'black',
+    fontFamily: 'RobotoMono-Italic',
   },
   footerText: {
     color: 'red',
+    fontFamily: 'RobotoMono-Italic',
   },
   checkboxContainer: {
     flexDirection: 'row',
@@ -62,6 +68,7 @@ const styles = StyleSheet.create({
   },
   checkboxText: {
     color: 'black',
+    fontFamily: 'RobotoMono-Italic',
     marginTop: 5,
   },
 });

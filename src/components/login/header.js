@@ -8,14 +8,15 @@ const Header = props => {
       <Text style={styles.title}>{props.title}</Text>
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder={'Email...'}
+          placeholder={props.emailPlaceHolder}
+          placeholderTextColor="#8A9399"
           style={[styles.input]}
           value={props.emailValue}
           onChangeText={props.onChangeEmail}
         />
       </View>
       <TouchableOpacity
-        disabled={!props.emailValue}
+        // disabled={!props.emailValue}
         style={styles.buttonContainer}
         onPress={props.action}
         activeOpacity={0.8}>
@@ -23,9 +24,9 @@ const Header = props => {
       </TouchableOpacity>
       <View style={styles.accContainer}>
         {props.isLogin ? (
-          <Text style={styles.accText}>You don't have account, please </Text>
+          <Text style={styles.accText}>{props.noAccText}</Text>
         ) : (
-          <Text style={styles.accText}>If you have account, please </Text>
+          <Text style={styles.accText}>{props.accText}</Text>
         )}
         <TouchableOpacity onPress={props.footerAction}>
           <Text style={styles.footerText}>{props.footerText}</Text>

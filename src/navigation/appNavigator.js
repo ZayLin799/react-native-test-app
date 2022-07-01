@@ -11,6 +11,7 @@ import appstyles from './appstyle';
 const appNavigator = () => {
   const [auth, setAuth] = useState(false);
   const [splashScreen, setSplashScreen] = useState(true);
+  const [lang, setLang] = useState('en');
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,9 +20,13 @@ const appNavigator = () => {
   });
 
   const context = {
+    lang,
     auth,
     getAuth: value => {
       setAuth(value);
+    },
+    getLang: value => {
+      setLang(value);
     },
   };
 

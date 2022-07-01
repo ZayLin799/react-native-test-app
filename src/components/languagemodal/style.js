@@ -5,10 +5,6 @@ import {
 } from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
-  maincontainer: {
-    flex: 1,
-    backgroundColor: '#D5FAFA',
-  },
   LangText: {
     color: 'black',
     borderRadius: 20,

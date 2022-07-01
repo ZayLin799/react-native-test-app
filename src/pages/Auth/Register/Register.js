@@ -1,15 +1,25 @@
-import {View, Text} from 'react-native';
-import React, {useState} from 'react';
+import {View, Text, ToastAndroid} from 'react-native';
+import React, {useState, useContext} from 'react';
 import Header from '@components/login/header';
+import DevFooter from '@components/devfooter/devfooter';
 import styles from './style';
+import {AuthContext} from '@context/context';
+import LanguageModal from '@components/languagemodal/languagemodal';
+import {useLocal} from '../../../hook';
 
 const Register = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [login, setLogin] = useState(false);
 
+  const {lang, getLang} = useContext(AuthContext);
+  const local = useLocal();
+
   const next = () => {
-    navigation.navigate('NextRegister', {email: email});
-    console.log('register-email ::', email);
+    if (email == '') {
+      ToastAndroid.show(`Please fill information!`, ToastAndroid.SHORT);
+    } else {
+      navigation.navigate('NextRegister', {email: email});
+    }
   };
 
   const footerHandler = () => {
@@ -22,24 +32,26 @@ const Register = ({navigation}) => {
 
   return (
     <View style={styles.maincontainer}>
-      <View>
-        <Header
-          title={'Register'}
-          action={next}
-          buttonText={'Next'}
-          emailValue={email}
-          onChangeEmail={val => setEmail(val)}
-          footerText={'login'}
-          isLogin={login}
-          footerAction={footerHandler}
-        />
-      </View>
-      <View style={styles.devContainer}>
-        <View style={{flexDirection: 'row'}}>
-          <Text style={styles.devTexta}>Developed by </Text>
-          <Text style={styles.devTextb}>Zay Lin</Text>
-        </View>
-      </View>
+      <LanguageModal
+        Language={getLang}
+        langde={local.language}
+        langen={local.english}
+        langmm={local.myanmar}
+        close={local.close}
+      />
+      <Header
+        title={local.register}
+        action={next}
+        buttonText={local.buttonText}
+        emailValue={email}
+        emailPlaceHolder={local.emailPlaceholder}
+        onChangeEmail={val => setEmail(val)}
+        footerText={local.footerTextre}
+        accText={local.already}
+        isLogin={login}
+        footerAction={footerHandler}
+      />
+      <DevFooter />
     </View>
   );
 };

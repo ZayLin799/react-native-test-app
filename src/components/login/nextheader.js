@@ -10,7 +10,8 @@ const nextheader = props => {
       <Text style={styles.title}>{props.title}</Text>
       <View style={styles.inputContainer}>
         <TextInput
-          placeholder={'Password...'}
+          placeholder={props.passwordPlaceHolder}
+          placeholderTextColor="#8A9399"
           secureTextEntry
           style={[styles.input, {marginTop: 20}]}
           value={props.passValue}
@@ -18,8 +19,8 @@ const nextheader = props => {
         />
         {!props.isLogin && (
           <TextInput
-            placeholder={'Confirm Password...'}
-            secureTextEntry
+            placeholder={props.conpasswordPlaceHolder}
+            placeholderTextColor="#8A9399"
             style={[styles.input, {marginTop: 20}]}
             value={props.passConValue}
             onChangeText={props.onChangePassCon}
@@ -33,12 +34,11 @@ const nextheader = props => {
               value={toggleCheckBox}
               onValueChange={newValue => setToggleCheckBox(newValue)}
             />
-            <Text style={styles.checkboxText}>Remember Password</Text>
+            <Text style={styles.checkboxText}>{props.remember}</Text>
           </View>
         )}
       </View>
       <TouchableOpacity
-        disabled={!props.passValue || (!props.isLogin && !props.passConValue)}
         style={styles.buttonContainer}
         onPress={props.action}
         activeOpacity={0.8}>
