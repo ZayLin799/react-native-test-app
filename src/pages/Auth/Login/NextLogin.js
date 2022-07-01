@@ -3,6 +3,7 @@ import React, {useState, useContext} from 'react';
 import NextHeader from '@components/login/nextheader';
 import styles from './style';
 import {AuthContext} from '@context/context';
+import RNSecureKeyStore, {ACCESSIBLE} from 'react-native-secure-key-store';
 
 const NextLogin = ({navigation, route}) => {
   const [password, setPassword] = useState('');
@@ -12,12 +13,20 @@ const NextLogin = ({navigation, route}) => {
   const {getAuth} = useContext(AuthContext);
 
   const goLogin = () => {
+    const userData = RNSecureKeyStore.get('@user.data').then(
+      res => {
+        console.log(res, 'Response data');
+      },
+      err => {
+        console.log(err);
+      },
+    );
     console.log('login-password ::', password);
     getAuth(true);
   };
 
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.maincontainer}>
       <View>
         <NextHeader
           title={'Security For Login'}

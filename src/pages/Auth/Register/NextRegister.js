@@ -3,6 +3,7 @@ import React, {useState, useContext} from 'react';
 import NextHeader from '@components/login/nextheader';
 import styles from './style';
 import {AuthContext} from '@context/context';
+import RNSecureKeyStore, {ACCESSIBLE} from 'react-native-secure-key-store';
 
 const NextLogin = ({navigation, route}) => {
   const [password, setPassword] = useState('');
@@ -13,13 +14,26 @@ const NextLogin = ({navigation, route}) => {
   const {getAuth} = useContext(AuthContext);
 
   const goRegister = () => {
-    console.log('register-password ::', password);
-    console.log('confirm-password ::', password);
+    let data = {
+      userEmail: email,
+      userPwd: password,
+      userPwdConfirm: passwordConfirm,
+    };
+    RNSecureKeyStore.set('@user.data', JSON.stringify(data), {
+      accessible: ACCESSIBLE.ALWAYS_THIS_DEVICE_ONLY,
+    }).then(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log(err);
+      },
+    );
     getAuth(true);
   };
 
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.maincontainer}>
       <View>
         <NextHeader
           title={'Security For Register'}

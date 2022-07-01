@@ -5,6 +5,10 @@ import {
 } from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
+  maincontainer: {
+    flex: 1,
+    backgroundColor: '#D5FAFA',
+  },
   devContainer: {
     flex: 1,
     justifyContent: 'flex-end',
@@ -16,18 +20,21 @@ const styles = StyleSheet.create({
   devTextb: {
     color: 'red',
   },
+  LangText: {
+    color: 'black',
+    borderRadius: 20,
+    padding: 10,
+    elevation: 1,
+  },
   centeredView: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'flex-end',
-    padding: hp(1),
-    marginTop: 22,
+    marginTop: 10,
   },
-  centeredViewSec: {
+  centeredViewsec: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: hp(1),
     marginTop: 22,
   },
   modalView: {
@@ -46,32 +53,24 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   button: {
-    borderRadius: 30,
-    padding: 20,
-    elevation: 1,
+    borderRadius: 15,
+    padding: 10,
+    elevation: 2,
   },
   buttonOpen: {
     backgroundColor: '#2196F3',
   },
   buttonClose: {
-    backgroundColor: '#2196F3',
-    marginTop: 20,
+    backgroundColor: '#ff0000',
   },
   textStyle: {
-    color: '#000000',
+    color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
   },
   modalText: {
     marginBottom: 15,
     textAlign: 'center',
-    color: 'black',
-  },
-  LangText: {
-    color: 'black',
-    borderRadius: 20,
-    padding: 10,
-    elevation: 1,
   },
 });
 

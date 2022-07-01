@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginTop: hp(3),
-    backgroundColor: '#000',
+    backgroundColor: '#2196F3',
     width: wp(70),
     paddingVertical: hp(1.8),
     alignItems: 'center',

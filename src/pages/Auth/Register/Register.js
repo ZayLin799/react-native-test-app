@@ -21,7 +21,7 @@ const Register = ({navigation}) => {
   };
 
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.maincontainer}>
       <View>
         <Header
           title={'Register'}

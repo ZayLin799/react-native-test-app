@@ -34,7 +34,7 @@ const appNavigator = () => {
             source={require('../../assets/images/tiny_logo.png')}
           />
         </View>
-        <Text>Zay Lin</Text>
+        <Text style={appstyles.splashtext}>Zay Lin</Text>
       </View>
     );
   } else if (auth) {

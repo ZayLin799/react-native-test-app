@@ -19,6 +19,8 @@ target 'Assignment' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'RNSecureKeyStore', :path => '../node_modules/react-native-secure-key-store'
+
   target 'AssignmentTests' do
     inherit! :complete
     # Pods for testing

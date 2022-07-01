@@ -5,6 +5,10 @@ import {
 } from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
+  maincontainer: {
+    flex: 1,
+    backgroundColor: '#D5FAFA',
+  },
   devContainer: {
     flex: 1,
     justifyContent: 'flex-end',

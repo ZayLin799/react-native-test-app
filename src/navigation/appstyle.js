@@ -9,7 +9,7 @@ const appstyles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#2196F3',
+    backgroundColor: '#D5FAFA',
   },
   imgcontainer: {
     paddingTop: 50,
@@ -17,6 +17,9 @@ const appstyles = StyleSheet.create({
   tinyLogo: {
     width: 50,
     height: 50,
+  },
+  splashtext: {
+    color: 'black',
   },
 });
 
