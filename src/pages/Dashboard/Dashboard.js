@@ -13,6 +13,16 @@ const Dashboard = () => {
   const {getAuth, lang, getLang} = useContext(AuthContext);
   const local = useLocal();
 
+  RNSecureKeyStore.get('@user.data').then(
+    res => {
+      const data = JSON.parse(res);
+      setEmail(data.userEmail);
+    },
+    err => {
+      console.log(err);
+    },
+  );
+
   const removeHandler = () => {
     RNSecureKeyStore.remove('@user.data').then(
       res => {
